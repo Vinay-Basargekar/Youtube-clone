@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import useSidebarStore from "../utils/useSidebarStore";
 import HomeIcon from "../utils/icons/homeIcon";
 import MusicIcon from "../utils/icons/musicIcon";
@@ -10,14 +11,16 @@ const SideBar = () => {
 
 	return (
 		<div
-			className={`pl-4 h-screen cursor-pointer bg-[#0f0f0f] ${
-				toggleState ? "w-12 md:w-16" : "w-32 md:w-48"
+			className={`pl-4 h-screen cursor-pointer  ${
+				toggleState ? "w-12 md:w-16" : "w-32 md:w-56"
 			} `}
 		>
 			<div className="flex mb-6 items-center ">
 				<HomeIcon />
 				{!toggleState && (
-					<span className="text-white pl-2 text-xs md:text-base">Home</span>
+					<span className="text-white pl-2 text-xs md:text-base">
+						<Link to="/">Home</Link>
+					</span>
 				)}
 			</div>
 			<div className="flex mb-6 items-center">
