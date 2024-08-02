@@ -5,11 +5,11 @@ import VideoContainer from './VideoContainer'
 
 const MainContainer = () => {
   return (
-    <div>
-        <ButtonList/>
-        <VideoContainer/>
-    </div>
-  )
+		<div className="bg-[#0f0f0f] w-screen">
+			<ButtonList />
+			<VideoContainer />
+		</div>
+	);
 }
 
 export default MainContainer

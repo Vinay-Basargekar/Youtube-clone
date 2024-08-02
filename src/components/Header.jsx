@@ -8,7 +8,7 @@ const Header = () => {
 	};
 
 	return (
-		<div className="flex justify-between items-center  bg-black shadow-md">
+		<div className="flex justify-between items-center  bg-[#0f0f0f] shadow-md">
 			<div className="flex items-center space-x-4 px-4">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -45,14 +45,14 @@ const Header = () => {
 				<input
 					type="text"
 					placeholder="Search"
-					className="md:w-full px-2 p-1 w-[90%] text-xs md:text-base md:p-2 bg-black border border-gray-700 rounded-l-3xl"
+					className="md:w-full px-2 p-1 w-[90%] text-xs md:text-base md:p-2 bg-[#121212] border border-[#262626] rounded-l-3xl"
 				/>
-				<button className="md:h-full md:w-16 p-1 md:p-2 bg-[#181818] border border-gray-700 border-l-0 rounded-r-3xl">
+				<button className="md:h-full md:w-16 p-1 md:p-2 bg-[#262626] border border-[#262626] border-l-0 rounded-r-3xl">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 24 24"
 						fill="currentColor"
-						className="w-4 h-4 ml-1 md:ml-2 md:w-6 md:h-6 text-white"
+						className="w-4 h-4  md:ml-2 md:w-6 md:h-6 text-white"
 					>
 						<path
 							fillRule="evenodd"

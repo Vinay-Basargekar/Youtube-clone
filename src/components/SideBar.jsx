@@ -10,7 +10,7 @@ const SideBar = () => {
 
 	return (
 		<div
-			className={`pl-4 h-screen cursor-pointer bg-black ${
+			className={`pl-4 h-screen cursor-pointer bg-[#0f0f0f] ${
 				toggleState ? "w-12 md:w-16" : "w-32 md:w-48"
 			} `}
 		>
