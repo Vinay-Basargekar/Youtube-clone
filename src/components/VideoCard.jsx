@@ -30,8 +30,8 @@ const VideoCard = ({ info }) => {
 		<div
 			className={`text-[#f2f2f2] m-1 md:m-2 rounded-lg overflow-hidden ${
 				IncVideoSize
-					? "max-[320px]:w-[8rem] max-[400px]:w-[10rem] max-[500px]:w-[11.5rem] max-[800px]:w-[13rem] md:w-[20rem]"
-					: "max-[320px]:w-[6rem] max-[700px]:w-[9rem] md:w-[24rem]"
+					? "max-[320px]:w-[8rem] max-[400px]:w-[10rem] max-[500px]:w-[11.5rem]  md:w-[20rem]"
+					: "max-[320px]:w-[6rem] max-[400px]:w-[8rem] max-[500px]:w-[9.5rem]  md:w-[24rem]"
 			}`}
 		>
 			<img
