@@ -9,7 +9,7 @@ const Header = () => {
 
 	return (
 		<div className="flex justify-between items-center shadow-md">
-			<div className="flex items-center space-x-4 px-4">
+			<div className="flex items-center space-x-4 px-1.5 md:px-4">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 24 24"

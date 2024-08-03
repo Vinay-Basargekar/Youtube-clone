@@ -11,14 +11,14 @@ const SideBar = () => {
 
 	return (
 		<div
-			className={`pl-4 h-screen cursor-pointer  ${
-				toggleState ? "w-12 md:w-16" : "w-32 md:w-56"
+			className={`pl-1.5 md:pl-4 h-screen cursor-pointer  ${
+				toggleState ? "w-8 md:w-16" : "w-[7.5rem] md:w-56"
 			} `}
 		>
 			<div className="flex mb-6 items-center ">
 				<HomeIcon />
 				{!toggleState && (
-					<span className="text-white pl-2 text-xs md:text-base">
+					<span className="text-white pl-1 md:pl-2 text-[0.6rem] md:text-base">
 						<Link to="/">Home</Link>
 					</span>
 				)}
@@ -26,13 +26,15 @@ const SideBar = () => {
 			<div className="flex mb-6 items-center">
 				<ShortIcon />
 				{!toggleState && (
-					<span className="text-white pl-2 text-xs md:text-base">Shorts</span>
+					<span className="text-white pl-1 md:pl-2 text-[0.6rem] md:text-base">
+						Shorts
+					</span>
 				)}
 			</div>
 			<div className="flex mb-6 items-center">
 				<SubIcon />
 				{!toggleState && (
-					<span className="text-white pl-2 text-xs md:text-base">
+					<span className="text-white pl-1 md:pl-2 text-[0.6rem] md:text-base">
 						Subscription
 					</span>
 				)}
@@ -40,7 +42,7 @@ const SideBar = () => {
 			<div className="flex mb-6 items-center">
 				<MusicIcon />
 				{!toggleState && (
-					<span className="text-white pl-2 text-xs md:text-base">
+					<span className="text-white pl-1 md:pl-2 text-[0.6rem] md:text-base">
 						Youtube music
 					</span>
 				)}

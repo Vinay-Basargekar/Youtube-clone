@@ -2,7 +2,6 @@ import React from "react";
 import useSidebarStore from "../utils/useSidebarStore";
 
 const VideoCard = ({ info }) => {
-
 	const IncVideoSize = useSidebarStore((state) => state.sidebarOpen);
 
 	const { snippet, statistics } = info;
@@ -29,19 +28,25 @@ const VideoCard = ({ info }) => {
 
 	return (
 		<div
-			className={`text-white m-4 rounded-lg overflow-hidden ${
-				IncVideoSize ? "w-[25rem]" : "w-[22rem]"
+			className={`text-[#f2f2f2] m-1 md:m-2 rounded-lg overflow-hidden ${
+				IncVideoSize
+					? "max-[320px]:w-[8rem] max-[400px]:w-[10rem] max-[500px]:w-[11.5rem] max-[800px]:w-[13rem] md:w-[20rem]"
+					: "max-[320px]:w-[6rem] max-[700px]:w-[9rem] md:w-[24rem]"
 			}`}
 		>
 			<img
 				src={thumbnails.medium.url}
 				alt={title}
-				className="w-full  object-cover rounded-lg"
+				className="w-full object-cover rounded-lg"
 			/>
-			<div className="pt-4">
-				<h1 className="text-lg font-bold w-fit">{title}</h1>
-				<p className="text-sm text-gray-400 truncate">{channelTitle}</p>
-				<p className="text-sm text-gray-400">
+			<div className="pt-2 md:pt-4">
+				<h1 className="text-[0.5rem] md:text-sm font-bold w-full truncate md:overflow-visible md:whitespace-normal">
+					{title}
+				</h1>
+				<p className="text-[0.5rem] md:text-sm text-[#a3a3a3] truncate md:overflow-visible md:whitespace-normal">
+					{channelTitle}
+				</p>
+				<p className="text-[0.5rem] md:text-sm text-[#a3a3a3] truncate md:overflow-visible md:whitespace-normal">
 					{formatViewCount(viewCount)} • {formatDate(publishedAt)}
 				</p>
 			</div>
