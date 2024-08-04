@@ -1,9 +1,4 @@
-export const GOGGLE_API_KEY = "AIzaSyCI6-RU1-yZF_oIDbWmV9zrMhKdznPgtxY";
-
-const API1 = "AIzaSyCDEcHLLpzglf2Z14IEAzx1FlZTMZEbpJI";
-const API2 = "AIzaSyB26wF8MlYDVJLst2ZhRXVyQMyLjtU5K_U";
-const API3 = "AIzaSyDnrjbOAGxyR-X2SBNTitio3EwVwlZbgwM";
-const API4 = "AIzaSyCI6-RU1-yZF_oIDbWmV9zrMhKdznPgtxY";
+export const GOGGLE_API_KEY = process.env.REACT_APP_GOGGLE_API_KEY5;
 
 export const YOUTUBE_API_URL =
 	"https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key=" +

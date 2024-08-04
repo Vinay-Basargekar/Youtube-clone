@@ -20,7 +20,7 @@ const VideoHeader = ({
 
 	return (
 		<div>
-			<h1 className="text-lg font-bold md:text-xl pl-4">{title}</h1>
+			<h1 className="text-base font-bold md:text-xl pl-4">{title}</h1>
 			<div className=" text-white p-4 flex flex-col md:flex-row items-start md:items-center justify-between">
 				<div className="flex items-start md:items-center">
 					<div className="md:mr-4">
@@ -38,7 +38,7 @@ const VideoHeader = ({
 									{totalSubscriber(channelSubscribers)}
 								</span>
 							</div>
-							<button className="bg-white hover:opacity-80 text-black py-1 px-4 rounded-3xl">
+							<button className="text-sm md:text-base bg-white hover:opacity-80 text-black py-1 px-3 md:px-4 rounded-3xl">
 								Subscribe
 							</button>
 						</div>
@@ -63,7 +63,7 @@ const VideoHeader = ({
 									/>
 								</svg>
 							</div>
-							<span>{formatLikes(likes)}</span>
+							<span className="text-sm md:text-base">{formatLikes(likes)}</span>
 						</button>
 
 						<button className="flex space-x-2 bg-[#262626] border border-[#262626] hover:opacity-80 text-white py-2 px-4 rounded-3xl">

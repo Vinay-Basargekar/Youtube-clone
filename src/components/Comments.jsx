@@ -98,7 +98,7 @@ const Comments = () => {
 								<p className="font-bold text-white ">
 									{comment.snippet.topLevelComment.snippet.authorDisplayName}
 								</p>
-								<p className="text-sm text-gray-400 p-1 md:p-2">
+								<p className="text-sm text-gray-400 pl-3 md:p-2">
 									{timeAgo(comment.snippet.topLevelComment.snippet.publishedAt)}
 								</p>
 							</div>

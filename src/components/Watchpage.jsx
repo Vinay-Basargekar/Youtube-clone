@@ -54,11 +54,11 @@ const Watchpage = () => {
 	}
 
 	return (
-		<div className="flex space-x-4">
+		<div className="flex space-x-4 w-[100%] overflow-x-hidden">
 			<div>
 				<div className="p-2 pt-0 ">
 					<iframe
-						className="w-[85vw] md:w-[65vw] h-[40vh] md:h-[65vh] rounded-xl"
+						className="w-[100%] md:w-[65vw] h-[40vh] md:h-[65vh] rounded-xl"
 						src={`https://www.youtube.com/embed/${searchParams.get(
 							"v"
 						)}?autoplay=1&loop=1&playlist=${searchParams.get("v")}`}
