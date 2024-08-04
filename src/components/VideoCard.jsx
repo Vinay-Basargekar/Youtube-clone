@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import useSidebarStore from "../utils/useSidebarStore";
+import {GOGGLE_API_KEY} from "../utils/constants";
 
 const VideoCard = ({ info }) => {
 	const IncVideoSize = useSidebarStore((state) => state.sidebarOpen);
@@ -12,7 +13,7 @@ const VideoCard = ({ info }) => {
 	useEffect(() => {
 		const fetchChannelLogo = async () => {
 			const response = await fetch(
-				`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${channelId}&key=AIzaSyDnrjbOAGxyR-X2SBNTitio3EwVwlZbgwM`
+				`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${channelId}&key=${GOGGLE_API_KEY}`
 			);
 			const data = await response.json();
 			console.log(data);
