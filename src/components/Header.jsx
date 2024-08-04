@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import useSidebarStore from "../utils/useSidebarStore";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+	const navigate = useNavigate();
+	const [input, setInput] = useState("");
 	const toggleBar = useSidebarStore((state) => state.setSidebarOpen);
+
 	const toggleSidebar = () => {
 		toggleBar();
+	};
+
+	const handleSearch = (e) => {
+		e.preventDefault();
+		const route = `/search?q=${input}`;
+		navigate(route);
 	};
 
 	return (
@@ -57,13 +67,21 @@ const Header = () => {
 					</svg>
 				</a>
 			</div>
-			<div className="flex items-center md:w-full md:max-w-lg">
+			<form
+				onSubmit={handleSearch}
+				className="flex items-center md:w-full md:max-w-lg"
+			>
 				<input
 					type="text"
 					placeholder="Search"
+					value={input}
+					onChange={(e) => setInput(e.target.value)}
 					className="md:w-full px-2 p-1 w-[90%] text-xs md:text-base md:p-2 bg-[#121212] border border-[#262626] rounded-l-3xl"
 				/>
-				<button className="md:h-full md:w-16 p-1 md:p-2 bg-[#262626] border border-[#262626] border-l-0 rounded-r-3xl">
+				<button
+					type="submit"
+					className="md:h-full md:w-16 p-1 md:p-2 bg-[#262626] border border-[#262626] border-l-0 rounded-r-3xl"
+				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 24 24"
@@ -77,7 +95,7 @@ const Header = () => {
 						/>
 					</svg>
 				</button>
-			</div>
+			</form>
 
 			<div className="flex items-center space-x-4">
 				<svg
