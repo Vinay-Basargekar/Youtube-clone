@@ -15,7 +15,7 @@ const Watchpage = () => {
 			);
 			const data = await response.json();
 			const videoDetails = data.items[0];
-			console.log(videoDetails);
+			// console.log(videoDetails);
 
 			const channelId = videoDetails.snippet.channelId;
 			const channelResponse = await fetch(

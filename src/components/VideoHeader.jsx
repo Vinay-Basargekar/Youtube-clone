@@ -1,4 +1,5 @@
 import React from "react";
+import Comments from "./Comments";
 
 const VideoHeader = ({
 	title,
@@ -9,18 +10,18 @@ const VideoHeader = ({
 }) => {
 	const formatViewCount = (count) => {
 		if (count >= 1_000_000) {
-			return (count / 1_000_000).toFixed(1) + "M views";
+			return (count / 1_000_000).toFixed(1) + "M subscribers";
 		} else if (count >= 1_000) {
-			return (count / 1_000).toFixed(1) + "K views";
+			return (count / 1_000).toFixed(1) + "K subscribers";
 		}
 		return count + " subscribers";
 	};
 
 	const formatLikes = (count) => {
 		if (count >= 1_000_000) {
-			return (count / 1_000_000).toFixed(1) + "M";
+			return (count / 1_000_000).toFixed(1) + "M ";
 		} else if (count >= 1_000) {
-			return (count / 1_000).toFixed(1) + "K views";
+			return (count / 1_000).toFixed(1) + "K ";
 		}
 		return count;
 	};
@@ -40,8 +41,8 @@ const VideoHeader = ({
 					<div className="flex flex-col">
 						<div className="flex space-x-9 mt-2">
 							<div className="flex flex-col mt-2 md:mt-0">
-								<span className="text-sm text-gray-400">{channelName}</span>
-								<span className=" text-xs text-gray-500">
+								<span className="text-sm text-white">{channelName}</span>
+								<span className=" text-xs text-[#a3a3a3]">
 									{formatViewCount(channelSubscribers)}
 								</span>
 							</div>
@@ -95,9 +96,9 @@ const VideoHeader = ({
 					</div>
 				</div>
 			</div>
-            <div>
-                
-            </div>
+			<div>
+				<Comments />
+			</div>
 		</div>
 	);
 };
