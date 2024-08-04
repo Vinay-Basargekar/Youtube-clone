@@ -1,5 +1,6 @@
 import React from "react";
 import Comments from "./Comments";
+import { totalSubscriber } from "../utils/constants";
 
 const VideoHeader = ({
 	title,
@@ -8,15 +9,6 @@ const VideoHeader = ({
 	channelImage,
 	likes,
 }) => {
-	const formatViewCount = (count) => {
-		if (count >= 1_000_000) {
-			return (count / 1_000_000).toFixed(1) + "M subscribers";
-		} else if (count >= 1_000) {
-			return (count / 1_000).toFixed(1) + "K subscribers";
-		}
-		return count + " subscribers";
-	};
-
 	const formatLikes = (count) => {
 		if (count >= 1_000_000) {
 			return (count / 1_000_000).toFixed(1) + "M ";
@@ -43,7 +35,7 @@ const VideoHeader = ({
 							<div className="flex flex-col mt-2 md:mt-0">
 								<span className="text-sm text-white">{channelName}</span>
 								<span className=" text-xs text-[#a3a3a3]">
-									{formatViewCount(channelSubscribers)}
+									{totalSubscriber(channelSubscribers)}
 								</span>
 							</div>
 							<button className="bg-white hover:opacity-80 text-black py-1 px-4 rounded-3xl">

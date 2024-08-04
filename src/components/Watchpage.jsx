@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import VideoHeader from "./VideoHeader";
 import { GOGGLE_API_KEY } from "../utils/constants";
+import RecommendedVideos from "./RecommendedVideos";
 
 const Watchpage = () => {
 	const [searchParams] = useSearchParams();
@@ -41,26 +42,31 @@ const Watchpage = () => {
 	}
 
 	return (
-		<div>
-			<div className="p-2 pt-0 ">
-				<iframe
-					className="w-[65vw] h-[50vh] md:h-[60vh] rounded-xl"
-					src={`https://www.youtube.com/embed/${searchParams.get(
-						"v"
-					)}?autoplay=1&loop=1&playlist=${searchParams.get("v")}`}
-					title="YouTube video player"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-					referrerPolicy="strict-origin-when-cross-origin"
-				></iframe>
+		<div className="flex space-x-4">
+			<div>
+				<div className="p-2 pt-0 ">
+					<iframe
+						className="w-[65vw] h-[50vh] md:h-[60vh] rounded-xl"
+						src={`https://www.youtube.com/embed/${searchParams.get(
+							"v"
+						)}?autoplay=1&loop=1&playlist=${searchParams.get("v")}`}
+						title="YouTube video player"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+						referrerPolicy="strict-origin-when-cross-origin"
+					></iframe>
+				</div>
+				<div className="w-[65vw]">
+					<VideoHeader
+						title={videoInfo.title}
+						channelName={videoInfo.channelName}
+						channelSubscribers={videoInfo.channelSubscribers}
+						channelImage={videoInfo.channelImage}
+						likes={videoInfo.likes}
+					/>
+				</div>
 			</div>
-			<div className="w-[65vw]">
-				<VideoHeader
-					title={videoInfo.title}
-					channelName={videoInfo.channelName}
-					channelSubscribers={videoInfo.channelSubscribers}
-					channelImage={videoInfo.channelImage}
-					likes={videoInfo.likes}
-				/>
+			<div>
+				<RecommendedVideos/>
 			</div>
 		</div>
 	);

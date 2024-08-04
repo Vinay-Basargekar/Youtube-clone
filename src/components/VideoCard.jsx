@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import useSidebarStore from "../utils/useSidebarStore";
 import {GOGGLE_API_KEY} from "../utils/constants";
+import {formatViewCount} from "../utils/constants";
+import {formatDate} from "../utils/constants";
 
 const VideoCard = ({ info }) => {
 	const IncVideoSize = useSidebarStore((state) => state.sidebarOpen);
@@ -25,23 +27,6 @@ const VideoCard = ({ info }) => {
 		fetchChannelLogo();
 	}, [channelId]);
 
-	const formatViewCount = (count) => {
-		if (count >= 1_000_000) {
-			return (count / 1_000_000).toFixed(1) + "M views";
-		} else if (count >= 1_000) {
-			return (count / 1_000).toFixed(1) + "K views";
-		}
-		return count + " views";
-	};
-
-	const formatDate = (dateString) => {
-		const date = new Date(dateString);
-		return date.toLocaleDateString("en-US", {
-			year: "numeric",
-			month: "short",
-			day: "numeric",
-		});
-	};
 
 	return (
 		<div
