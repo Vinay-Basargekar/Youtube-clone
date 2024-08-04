@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 const useSidebarStore = create((set) => ({
-	sidebarOpen: false,
+	sidebarOpen: true,
 	setSidebarOpen: () => set((state) => ({ sidebarOpen: !state.sidebarOpen })),
 }));
 
