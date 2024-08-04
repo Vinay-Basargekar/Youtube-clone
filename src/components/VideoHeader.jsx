@@ -31,7 +31,7 @@ const VideoHeader = ({
 						/>
 					</div>
 					<div className="flex flex-col">
-						<div className="flex space-x-9 mt-2">
+						<div className="flex space-x-9 pl-2 md:pl-0 md:mt-2">
 							<div className="flex flex-col mt-2 md:mt-0">
 								<span className="text-sm text-white">{channelName}</span>
 								<span className=" text-xs text-[#a3a3a3]">

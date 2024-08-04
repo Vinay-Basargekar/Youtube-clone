@@ -34,16 +34,16 @@ const Comments = () => {
 	const [comments, setComments] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
-    const [totalComments, setTotalComments] = useState(0);
+	const [totalComments, setTotalComments] = useState(0);
 
-    const formatLikes = (count) => {
-			if (count >= 1_000_000) {
-				return (count / 1_000_000).toFixed(1) + "M ";
-			} else if (count >= 1_000) {
-				return (count / 1_000).toFixed(1) + "K ";
-			}
-			return count;
-		};
+	const formatLikes = (count) => {
+		if (count >= 1_000_000) {
+			return (count / 1_000_000).toFixed(1) + "M ";
+		} else if (count >= 1_000) {
+			return (count / 1_000).toFixed(1) + "K ";
+		}
+		return count;
+	};
 
 	useEffect(() => {
 		const videoId = searchParams.get("v");
@@ -58,7 +58,7 @@ const Comments = () => {
 					setError(data.error.message);
 				} else {
 					setComments(data.items);
-                    setTotalComments(data.pageInfo.totalResults);
+					setTotalComments(data.pageInfo.totalResults);
 				}
 			} catch (error) {
 				setError("Failed to fetch comments.");
@@ -80,9 +80,11 @@ const Comments = () => {
 
 	return (
 		<div className="p-4">
-			<h1 className="text-lg font-bold md:text-xl">Comments({totalComments})</h1>
+			<h1 className="text-lg font-bold md:text-xl">
+				Comments({totalComments})
+			</h1>
 			{comments.map((comment) => (
-				<div key={comment.id} className="mb-4 p-2 rounded-lg ">
+				<div key={comment.id} className="md:mb-4 p-2 rounded-lg ">
 					<div className="flex items-start space-x-4">
 						<img
 							src={
@@ -92,16 +94,16 @@ const Comments = () => {
 							className="w-10 h-10 rounded-full"
 						/>
 						<div>
-							<div className="flex items-center">
+							<div className="flex text-xs md:text-base items-center">
 								<p className="font-bold text-white ">
 									{comment.snippet.topLevelComment.snippet.authorDisplayName}
 								</p>
-								<p className="text-sm text-gray-400 p-2">
+								<p className="text-sm text-gray-400 p-1 md:p-2">
 									{timeAgo(comment.snippet.topLevelComment.snippet.publishedAt)}
 								</p>
 							</div>
 							<div>
-								<p className="text-sm text-white">
+								<p className="text-white text-xs md:text-base">
 									{comment.snippet.topLevelComment.snippet.textDisplay}
 								</p>
 							</div>

@@ -6,7 +6,9 @@ import Header from "./Header";
 const Body = () => {
 	return (
 		<>
-			<Header />
+			<div className="w-screen bg-black">
+				<Header />
+			</div>
 			<div className="flex">
 				<SideBar />
 				<Outlet />

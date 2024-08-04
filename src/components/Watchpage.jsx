@@ -7,6 +7,7 @@ import RecommendedVideos from "./RecommendedVideos";
 const Watchpage = () => {
 	const [searchParams] = useSearchParams();
 	const [videoInfo, setVideoInfo] = useState(null);
+	const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 600);
 
 	useEffect(() => {
 		const fetchVideoDetails = async () => {
@@ -37,6 +38,17 @@ const Watchpage = () => {
 		fetchVideoDetails();
 	}, [searchParams]);
 
+	useEffect(() => {
+		const handleResize = () => {
+			setIsLargeScreen(window.innerWidth >= 600);
+		};
+
+		window.addEventListener("resize", handleResize);
+
+		// Clean up event listener on component unmount
+		return () => window.removeEventListener("resize", handleResize);
+	}, []);
+
 	if (!videoInfo) {
 		return <div>Loading...</div>;
 	}
@@ -46,7 +58,7 @@ const Watchpage = () => {
 			<div>
 				<div className="p-2 pt-0 ">
 					<iframe
-						className="w-[65vw] h-[50vh] md:h-[60vh] rounded-xl"
+						className="w-[85vw] md:w-[65vw] h-[40vh] md:h-[65vh] rounded-xl"
 						src={`https://www.youtube.com/embed/${searchParams.get(
 							"v"
 						)}?autoplay=1&loop=1&playlist=${searchParams.get("v")}`}
@@ -55,7 +67,7 @@ const Watchpage = () => {
 						referrerPolicy="strict-origin-when-cross-origin"
 					></iframe>
 				</div>
-				<div className="w-[65vw]">
+				<div className="w-full">
 					<VideoHeader
 						title={videoInfo.title}
 						channelName={videoInfo.channelName}
@@ -65,9 +77,11 @@ const Watchpage = () => {
 					/>
 				</div>
 			</div>
-			<div>
-				<RecommendedVideos/>
-			</div>
+			{isLargeScreen && (
+				<div >
+					<RecommendedVideos />
+				</div>
+			)}
 		</div>
 	);
 };

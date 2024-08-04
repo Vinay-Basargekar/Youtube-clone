@@ -18,7 +18,7 @@ const Header = () => {
 	};
 
 	return (
-		<div className="flex justify-between items-center shadow-md">
+		<div className="flex justify-between items-center shadow-md w-screen">
 			<div className="flex items-center space-x-4 px-1.5 md:px-4">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -76,8 +76,10 @@ const Header = () => {
 					placeholder="Search"
 					value={input}
 					onChange={(e) => setInput(e.target.value)}
-					className="md:w-full px-2 p-1 w-[90%] text-xs md:text-base md:p-2 bg-[#121212] border border-[#262626] rounded-l-3xl"
+					className="md:w-full px-2 p-1 w-[90%] text-xs md:text-base md:p-2 md:px-4 bg-[#121212] border border-[#262626] rounded-l-3xl focus:border-blue-500 focus:ring-0"
+					style={{ borderWidth: "1px" }}
 				/>
+
 				<button
 					type="submit"
 					className="md:h-full md:w-16 p-1 md:p-2 bg-[#262626] border border-[#262626] border-l-0 rounded-r-3xl"
@@ -100,11 +102,11 @@ const Header = () => {
 			<div className="flex items-center space-x-4">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					fill="white"
+					fill="black"
 					viewBox="0 0 24 24"
 					strokeWidth={1.5}
 					stroke="currentColor"
-					className="w-6 h-6 md:w-10 md:h-10 m-4"
+					className="w-6 h-6 md:w-10 md:h-10 m-4 cursor-pointer"
 				>
 					<path
 						strokeLinecap="round"
