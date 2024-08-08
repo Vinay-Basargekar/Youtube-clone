@@ -64,6 +64,7 @@ const Watchpage = () => {
 						)}?autoplay=1&loop=1&playlist=${searchParams.get("v")}`}
 						title="YouTube video player"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+						allowFullScreen
 						referrerPolicy="strict-origin-when-cross-origin"
 					></iframe>
 				</div>
@@ -78,7 +79,7 @@ const Watchpage = () => {
 				</div>
 			</div>
 			{isLargeScreen && (
-				<div >
+				<div>
 					<RecommendedVideos />
 				</div>
 			)}

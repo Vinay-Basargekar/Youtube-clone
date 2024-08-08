@@ -18,7 +18,7 @@ const VideoCard = ({ info }) => {
 				`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${channelId}&key=${GOGGLE_API_KEY}`
 			);
 			const data = await response.json();
-			console.log(data);
+			// console.log(data);
 			if (data.items.length > 0) {
 				setChannelLogo(data.items[0].snippet.thumbnails.default.url);
 			}
